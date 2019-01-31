@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getUsers} from '../actions';
+import {getUsers, getUsersRequest} from '../actions';
 
 class Container extends Component {
 
+    constructor(props) {
+        super(props);
+        this.props.getUsersRequest()
+    }
+
     componentDidMount() {
-        console.log("Arash getUsers:", getUsers);
-        this.props.getUsers()
+        // console.log("Arash getUsers:", getUsers);
+        // this.props.getUsers()
         console.log("Arash users:", this.props.users);
     }
     render() {
@@ -16,4 +21,4 @@ class Container extends Component {
     }
 }
 
-export default connect(({users}) => ({users}), {getUsers})(Container);
+export default connect(({users}) => ({users}), {getUsers, getUsersRequest})(Container);

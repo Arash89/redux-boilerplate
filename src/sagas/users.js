@@ -7,9 +7,9 @@ import { getUsersApi } from "../api-utils/api";
 export function* fetchUsers() {
     try {
         const result = yield call(getUsersApi);
-        yield put(ACTIONS.getUsers(result)); 
+        yield put(ACTIONS.getUsers(result.data.data)); 
     } catch(error) {
-        console.log("Arash Error:",error);
+        console.log("Error:",error);
     }
     
 }
@@ -23,7 +23,3 @@ export const usersSaga = [fork(watchFetchRequest)];
 export default function* rootSagas() {
     yield all([...usersSaga]);
 }
-
-// export default function* rootSagas() {
-//     yield all([watchFetchRequest]);
-// }

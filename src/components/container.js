@@ -10,12 +10,12 @@ class Container extends Component {
     }
 
     componentDidMount() {
-        // console.log("Arash getUsers:", getUsers);
-        // this.props.getUsers()
-        console.log("Arash users:", this.props.users);
+        this.props.getUsers()
     }
+
     render() {
         return (<div>
+            <h3>List of users</h3>
             {console.log("In Render:", this.props.users)}
         </div>);
     }

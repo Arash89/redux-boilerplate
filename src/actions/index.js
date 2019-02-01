@@ -7,10 +7,9 @@ export const getUsersRequest = () => ({
 	type: Types.GET_USERS_LISEN
 });
 
-export const getUsers = (result) => {
-    console.log("I wana to be run :D",  result && result.data ? result.data.data : "nist");
+export const getUsers = (data) => {
     return {
         type: Types.GET_USERS,
-        payload: result && result.data ? result.data.data : undefined
+        payload: data
     }
 };

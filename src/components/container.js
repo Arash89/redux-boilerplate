@@ -4,11 +4,6 @@ import {getUsers, getUsersRequest} from '../actions';
 
 class Container extends Component {
 
-    constructor(props) {
-        super(props);
-        this.props.getUsersRequest()
-    }
-
     componentDidMount() {
         this.props.getUsers()
     }
@@ -21,4 +16,4 @@ class Container extends Component {
     }
 }
 
-export default connect(({users}) => ({users}), {getUsers, getUsersRequest})(Container);
+export default connect(({users}) => ({users}), {getUsers})(Container);
